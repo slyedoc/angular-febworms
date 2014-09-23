@@ -1,8 +1,8 @@
 {
-  "name": "angular-febworms",
-  "version": "0.0.2",
+  "name": "slyedoc-angular-forms-editor",
+  "version": "0.0.1",
   "authors": [
-    "Null McNull <no@spam.org>"
+    "patrick towles"
   ],
   "license": "MIT",
   "ignore": [
@@ -22,19 +22,19 @@
   "main": [
     "package/febworms.css", "package/febworms.js"
   ],
-  "homepage": "https://github.com/McNull/angular-febworms",
+  "homepage": "https://github.com/slyedoc/angular-febworms",
   "repository": {
     "type": "git",
-    "url": "git://github.com/McNull/angular-febworms.git"
+    "url": "git://github.com/slyedoc/angular-febworms.git"
   },
   "devDependencies": {
-    "bootstrap-css": "2.3.2",
-    "lodash": "~2.2.1",
-    "json3": "~3.2.5",
-    "jquery": "1.10.2",
-    "angular": "1.2.0",
-    "angular-resource": "1.2.0",
-    "angular-route": "1.2.0",
-    "angular-mocks": "1.2.0"
+    "bootstrap": "x.x.x",
+    "lodash": "x.x.x",
+    "json3": "x.x.x",
+    "jquery": "x.x.x",
+    "angular": "x.x.x",
+    "angular-resource": "x.x.x",
+    "angular-route": "x.x.x",
+    "angular-mocks": "x.x.x"
   }
 }

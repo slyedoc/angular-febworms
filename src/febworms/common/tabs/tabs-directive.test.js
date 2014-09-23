@@ -25,7 +25,6 @@ describe('febworms-tabs-directive', function() {
     $scope.$digest();
 
     // Assert
-
     expect($element.find('.febworms-tabs').length).toBe(1);
   });
 

@@ -1,12 +1,12 @@
 {
-  "name": "angular-febworms",
+  "name": "slyedoc-angular-febworms",
   "version": "0.0.1",
-  "description": "Yes, this is javascript. No, this does not need to see sharp.",
+  "description": "credit to angular-febworms, only small changes",
   "main": "grunt",
   "scripts": {
     "test": "grunt test"
   },
-  "author": "this",
+  "author": "James Towles",
   "license": "BSD-2-Clause",
   "devDependencies": {
     "bower": "~1.2.7",
