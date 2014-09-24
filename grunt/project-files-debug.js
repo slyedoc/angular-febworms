@@ -2,25 +2,25 @@
 var files = {
   febworms: {
     js: [
-      'febworms/febworms.js',
-      'febworms/**/*.js',
+      'components/febworms/febworms.js',
+      'components/febworms/**/*.js',
       '!febworms/**/*.test.js'
     ],
     css: [
-      'febworms/febworms.css',
-      'febworms/edit/edit.css',
-      'febworms/edit/canvas/canvas.css',
-      'febworms/**/*.css'
+      'components/febworms/febworms.css',
+      'components/febworms/edit/edit.css',
+      'components/febworms/edit/canvas/canvas.css',
+      'components/febworms/**/*.css'
     ],
     test: [
-      'febworms/**/*.test.js'
+      'components/febworms/**/*.test.js'
     ],
     other: [
-      'febworms/**/*.png',
-      'febworms/**/*.jpg'
+      'components/febworms/**/*.png',
+      'components/febworms/**/*.jpg'
     ],
     html2js: [
-      'febworms/templates-febworms.js'
+      'components/febworms/templates-febworms.js'
     ]
   },
 

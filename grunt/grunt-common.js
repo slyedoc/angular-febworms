@@ -93,7 +93,7 @@ module.exports = function(grunt, projectFiles) {
           }
         },
         files: {
-          'dist/index.html': ['src/index.ejs']
+          'dist/index.html': ['app/index.html']
         }
       },
       karmaConf: {
