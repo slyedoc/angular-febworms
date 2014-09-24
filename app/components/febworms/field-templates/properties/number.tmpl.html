@@ -3,7 +3,7 @@
     <div febworms-property-field-common="{ fieldname: true, displayname: true, placeholder: true, tooltip: true, focus: true }"></div>
 
     <div febworms-property-field-value>
-      <input febworms-input-number 
+      <input class="form-control" febworms-input-number
              type="text" 
              name="fieldValue" 
              ng-model="field.value" 
@@ -21,7 +21,8 @@
     <div class="febworms-property-field-validation">  
       <div febworms-property-field="min" 
            febworms-property-field-label="Minimum value">
-           <input febworms-input-number
+           <input class="form-control"
+                  febworms-input-number
                   febworms-field-redraw
                   type="text"
                   name="min"
@@ -38,7 +39,8 @@
     <div class="febworms-property-field-validation">  
       <div febworms-property-field="max" 
            febworms-property-field-label="Maximum value">
-           <input febworms-input-number
+           <input class="form-control"
+                  febworms-input-number
                   febworms-field-redraw
                   type="text"
                   name="max"
