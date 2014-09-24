@@ -5,6 +5,11 @@
     "patrick towles"
   ],
   "license": "MIT",
+  "dependencies": {
+    "jquery": "x.x.x",
+    "bootstrap": "x.x.x",
+    "angular": "x.x.x"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
@@ -13,14 +18,15 @@
     "package.json",
     "*.sublime*",
     "tmp",
-    "src",
+    "app",
     "server",
     "karma",
     "grunt",
     "dist"
   ],
   "main": [
-    "package/febworms.css", "package/febworms.js"
+    "package/febworms.css",
+    "package/febworms.js"
   ],
   "homepage": "https://github.com/slyedoc/angular-febworms",
   "repository": {
@@ -28,13 +34,11 @@
     "url": "git://github.com/slyedoc/angular-febworms.git"
   },
   "devDependencies": {
-    "bootstrap": "x.x.x",
     "lodash": "x.x.x",
     "json3": "x.x.x",
-    "jquery": "x.x.x",
-    "angular": "x.x.x",
     "angular-resource": "x.x.x",
     "angular-route": "x.x.x",
-    "angular-mocks": "x.x.x"
+    "angular-mocks": "x.x.x",
+    "angular-ui-router": "~0.2.11"
   }
 }
