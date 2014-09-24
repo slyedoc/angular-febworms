@@ -17,7 +17,7 @@ angular.module('app').controller('FormEditController', function ($scope, $locati
 
 });
 
-// angular.module('app2').factory('FormEditResolver', function ($route, Form) {
+// angular.module('app').factory('FormEditResolver', function ($route, Form) {
 //   return Form.get({ id: $route.current.params.id });
 // });
 

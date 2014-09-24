@@ -28,8 +28,8 @@ var replace = require('gulp-replace');
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch('app2/**/*.css', ['build']);
-    gulp.watch('app2/**/*.js', ['build']);
+    gulp.watch('app/**/*.css', ['build']);
+    gulp.watch('app/**/*.js', ['build']);
 });
 
 // Clean.
@@ -40,14 +40,14 @@ gulp.task('clean', function() {
 gulp.task('build', function () {
 
     //get css files
-    var cssFiles = gulp.src(['app2/**/*.css', '!app2/bower_components/**']);
+    var cssFiles = gulp.src(['app/**/*.css', '!app/bower_components/**']);
 
     //get js files, be sure to sort for angular
-    var jsFiles = gulp.src(['app2/**/*.js', '!app2/bower_components/**', '!app2/**/*.test.js'])
+    var jsFiles = gulp.src(['app/**/*.js', '!app/bower_components/**', '!app/**/*.test.js'])
         .pipe(angularFilesort());
 
     //upload files into index.html page
-    gulp.src('./app2/index.html')
+    gulp.src('./app/index.html')
         .pipe(inject(gulp.src(bowerFiles( {
             includeDev: true
         }), {read: true}), {
@@ -61,7 +61,7 @@ gulp.task('build', function () {
             addRootSlash: false,
             ignorePath: 'app'
         }))
-        .pipe(gulp.dest('./app2'));
+        .pipe(gulp.dest('./app'));
 
 });
 
@@ -69,14 +69,14 @@ gulp.task('dist', ['clean'],  function () {
     var dist = './dist';
 
     //get css files, copy to dist
-    var cssFiles = gulp.src(['app2/**/*.css', '!app2/bower_components/**'])
+    var cssFiles = gulp.src(['app/**/*.css', '!app/bower_components/**'])
         .pipe(sourcemaps.init())
         .pipe(concat('style.css'))           // concat files together
         .pipe(minifyCSS({keepBreaks:true}))    //minify css
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(dist));
 
-    var jsFiles = gulp.src(['app2/**/*.js', '!app2/bower_components/**', '!app2/**/*-test.js']) //get js files
+    var jsFiles = gulp.src(['app/**/*.js', '!app/bower_components/**', '!app/**/*-test.js']) //get js files
         .pipe(angularFilesort())        //sort for angular
         .pipe(ngAnnotate({              //annotate angular for minifaction
             remove: true,
@@ -99,7 +99,7 @@ gulp.task('dist', ['clean'],  function () {
         .pipe(gulp.dest(dist));             // copy to dist
 
     //get html files, copy to dist
-    var htmlFiles = gulp.src(['app2/**/*.html', '!app2/bower_components/**', '!app2/index.html'])
+    var htmlFiles = gulp.src(['app/**/*.html', '!app/bower_components/**', '!app/index.html'])
         .pipe(htmlify({                 //turn all our custom tags into valid html, add data- before each ng- tag
             customPrefixes: ['ui-', 'tp-']
         }))
@@ -114,15 +114,15 @@ gulp.task('dist', ['clean'],  function () {
         .pipe(gulp.dest(dist));
 
     // bower js files
-    gulp.src(bowerFiles(), { base: 'app2/bower_components' })
+    gulp.src(bowerFiles(), { base: 'app/bower_components' })
         .pipe(gulp.dest('dist/bower_components'));
 
     //copy ico
-    gulp.src('app2/favicon.ico', { base: 'app' })
+    gulp.src('app/favicon.ico', { base: 'app' })
         .pipe(gulp.dest(dist));
 
     //min images
-    gulp.src('app2/components/images/*', { base: 'app' })
+    gulp.src('app/components/images/*', { base: 'app' })
         //.pipe(imagemin({
         //    progressive: true,
         //    svgoPlugins: [{removeViewBox: false}],
@@ -131,7 +131,7 @@ gulp.task('dist', ['clean'],  function () {
         .pipe(gulp.dest(dist));
 
     //inject resources into index.html
-    gulp.src('./app2/index.html')
+    gulp.src('./app/index.html')
         .pipe(inject(gulp.src(bowerFiles(), {read: true}), {
             name: 'bower',
             addRootSlash: false,
