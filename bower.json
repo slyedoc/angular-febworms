@@ -11,22 +11,19 @@
     "angular": "x.x.x"
   },
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "vendor",
-    "gruntfile.js",
-    "package.json",
-    "*.sublime*",
-    "tmp",
-    "app",
-    "server",
-    "karma",
-    "grunt",
-    "dist"
+      "app",
+      "karma",
+      "node_modules",
+      ".bowerrc",
+      ".bowerrc",
+      ".gitignore",
+      "gulpfile.js",
+      "README.md"
   ],
   "main": [
     "package/febworms.css",
-    "package/febworms.js"
+    "package/febworms.min.js",
+    "package/febworms.templates.min.js"
   ],
   "homepage": "https://github.com/slyedoc/angular-febworms",
   "repository": {

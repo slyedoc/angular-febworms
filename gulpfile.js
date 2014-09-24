@@ -3,9 +3,6 @@
 // Include gulp
 var gulp = require('gulp');
 
-// Include Our Plugins
-
-
 var bowerFiles = require('main-bower-files');
 var clean = require('gulp-clean');
 var inject = require('gulp-inject');
@@ -34,7 +31,7 @@ gulp.task('watch', function() {
 
 // Clean.
 gulp.task('clean', function() {
-    return gulp.src(['./dist'], {read: false}).pipe(clean());
+    return gulp.src(['./package'], {read: false}).pipe(clean());
 });
 
 gulp.task('build', function () {
@@ -65,18 +62,21 @@ gulp.task('build', function () {
 
 });
 
-gulp.task('dist', ['clean'],  function () {
-    var dist = './dist';
+gulp.task('package', ['clean'],  function () {
+    var name = 'febworms';
+    var src =  'app/components/' + name;
+    var dist = './package';
+    var templates = name + '.templates';
 
     //get css files, copy to dist
-    var cssFiles = gulp.src(['app/**/*.css', '!app/bower_components/**'])
+    var cssFiles = gulp.src([ src + '/**/*.css', '!app/bower_components/**'])
         .pipe(sourcemaps.init())
-        .pipe(concat('style.css'))           // concat files together
+        .pipe(concat( name + '.css'))           // concat files together
         .pipe(minifyCSS({keepBreaks:true}))    //minify css
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(dist));
 
-    var jsFiles = gulp.src(['app/**/*.js', '!app/bower_components/**', '!app/**/*-test.js']) //get js files
+    var jsFiles = gulp.src([ src + '/**/*.js', '!app/bower_components/**', '!app/**/*.test.js']) //get js files
         .pipe(angularFilesort())        //sort for angular
         .pipe(ngAnnotate({              //annotate angular for minifaction
             remove: true,
@@ -84,8 +84,8 @@ gulp.task('dist', ['clean'],  function () {
             single_quotes: true
         }))
         .pipe(gulpAngularExtender({         //add templates module for the .html files
-            app: [
-                'templates'
+            febworms: [
+                templates
             ]
         }))
         //.pipe(replace(                      //replace backend api url
@@ -93,13 +93,13 @@ gulp.task('dist', ['clean'],  function () {
         //    'backendUrl\', \'http://tracker.trackerproducts.com/\''
         //))
         .pipe(sourcemaps.init())            // setup maps for js files,
-        .pipe(concat('all.js'))           // concat files together
+        .pipe(concat( name + '.min.js'))           // concat files together
         .pipe(uglify())                   // minify it
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(dist));             // copy to dist
 
     //get html files, copy to dist
-    var htmlFiles = gulp.src(['app/**/*.html', '!app/bower_components/**', '!app/index.html'])
+    var htmlFiles = gulp.src([src + '/**/*.html', '!app/bower_components/**', '!app/index.html'])
         .pipe(htmlify({                 //turn all our custom tags into valid html, add data- before each ng- tag
             customPrefixes: ['ui-', 'tp-']
         }))
@@ -107,53 +107,16 @@ gulp.task('dist', ['clean'],  function () {
             comments:false,
             spare:true
         }))
-        .pipe(templateCache( {
+        .pipe(templateCache( templates + '.min.js', {  //name, then options
             standalone: true,
-            module: 'templates'
+            module: templates
         }))       //save html into a templateCache so we don't go back to the server for it
-        .pipe(gulp.dest(dist));
+        .pipe(uglify())                   // minify it
+        .pipe(gulp.dest(dist ));
 
-    // bower js files
-    gulp.src(bowerFiles(), { base: 'app/bower_components' })
-        .pipe(gulp.dest('dist/bower_components'));
 
-    //copy ico
-    gulp.src('app/favicon.ico', { base: 'app' })
-        .pipe(gulp.dest(dist));
-
-    //min images
-    gulp.src('app/components/images/*', { base: 'app' })
-        //.pipe(imagemin({
-        //    progressive: true,
-        //    svgoPlugins: [{removeViewBox: false}],
-        //    use: [pngcrush()]
-        //}))
-        .pipe(gulp.dest(dist));
-
-    //inject resources into index.html
-    gulp.src('./app/index.html')
-        .pipe(inject(gulp.src(bowerFiles(), {read: true}), {
-            name: 'bower',
-            addRootSlash: false,
-            ignorePath: 'app'
-        }))
-        .pipe(htmlify({                 //turn all our custom tags into valid html, add data- before each ng- tag
-            customPrefixes: ['ui-', 'tp-']
-        }))
-        .pipe(inject(es.merge(
-            cssFiles,
-            htmlFiles,
-            jsFiles
-
-        ), {
-            addRootSlash: false,
-            ignorePath: 'dist'
-        }))
-        .pipe(gulp.dest(dist));
 });
 
 
-
-
 // Default Task
-gulp.task('default', ['clean', 'build', 'dist']);
+gulp.task('default', ['clean', 'package']);
