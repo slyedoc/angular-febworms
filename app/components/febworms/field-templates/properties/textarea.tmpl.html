@@ -2,7 +2,8 @@
 	<div febworms-tabs-pane="Properties">
 		<div febworms-property-field-common="{ fieldname: true, displayname: true, placeholder: true, tooltip: true, focus: true }"></div>
 		<div febworms-property-field-value>
-			<textarea name="fieldValue" 
+			<textarea class="form-control"
+                    name="fieldValue"
 				   ng-model="field.value" 
 				   ng-minlength="{{ field.validation.minlength }}"
        			   ng-maxlength="{{ field.validation.maxlength }}"

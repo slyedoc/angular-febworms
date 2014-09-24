@@ -28,7 +28,7 @@ angular.module('febworms').directive('febwormsDropdownInput', function($compile,
     var closeTimeout;
 
     $scope.dropdownToggle = function() {
-      $button[0].focus(); // force focus for chrome  
+      $button[0].focus(); // force focus for chrome
       $scope.dropdownVisible = !$scope.dropdownVisible
     };
 

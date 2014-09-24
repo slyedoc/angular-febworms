@@ -6,8 +6,9 @@ angular.module('febworms').directive('febwormsParsePattern', function() {
       var ngModelCtrl = ctrls[0];
 
       ngModelCtrl.$parsers.push(validate);
-      
+        console.log('123');
       function validate(value) {
+        console.log(value);
         try {
           new RegExp(value);
         } catch(e) {

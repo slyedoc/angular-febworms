@@ -1,22 +1,24 @@
-
-<div class="row">
-    <h3> Palette </h3>
-    <div class="col-sm-12">
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                {{ categoryName || 'All field types' }} <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li ng-repeat="(name, category) in categories" ng-class="{ 'active': categoryName === name }">
-                    <a ng-click="setCategory(name, category)">
-                        {{ name }}
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li ng-class="{ 'active': !category }">
-                    <a ng-click="setCategory(null)">All field types</a>
-                </li>
-            </ul>
+<div class="febworms-edit-palette-categories">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group btn-group-justified col-sm-12">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        {{ categoryName || 'All field types' }} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="(name, category) in categories" ng-class="{ 'active': categoryName === name }">
+                            <a ng-click="setCategory(name, category)">
+                                {{ name }}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li ng-class="{ 'active': !category }">
+                            <a ng-click="setCategory(null)">All field types</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
- </div>
+</div>

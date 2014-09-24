@@ -28,7 +28,7 @@
 }
 
 .table-field-options {
-	
+
 }
 
 .table-field-options td, .table-field-options th {
@@ -44,7 +44,7 @@
 .table-field-options th {
 }
 
-.table-field-options input[type="checkbox"], 
+.table-field-options input[type="checkbox"],
 .table-field-options input[type="radio"] {
 	margin-top: 0;
 }
