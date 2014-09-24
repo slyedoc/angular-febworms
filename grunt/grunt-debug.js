@@ -16,11 +16,11 @@ module.exports = function(grunt, commonConfig) {
     },
     html2js: {
       app: {
-        src: ['app/app/**/*.tmpl.html'],
-        dest: 'dist/app/templates-app.js'
+        src: ['app2/app2/**/*.tmpl.html'],
+        dest: 'dist/app2/templates-app2.js'
       },
       febworms: {
-        src: ['app/febworms/**/*.tmpl.html'],
+        src: ['app2/febworms/**/*.tmpl.html'],
         dest: 'dist/febworms/templates-febworms.js'
       }
     },

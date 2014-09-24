@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html id="ng-app" ng-app="app">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="components/febworms/febworms.css">
+    <link rel="stylesheet" href="components/navbar/navbar.css">
+    <link rel="stylesheet" href="components/febworms/common/febworms-dropdown-input.css">
+    <link rel="stylesheet" href="components/febworms/edit/edit.css">
+    <link rel="stylesheet" href="components/febworms/form/form.css">
+    <link rel="stylesheet" href="components/febworms/validation/summary.css">
+    <link rel="stylesheet" href="components/febworms/common/jsonify/jsonify.css">
+    <link rel="stylesheet" href="components/febworms/common/tabs/tabs.css">
+    <link rel="stylesheet" href="components/febworms/edit/canvas/canvas.css">
+    <link rel="stylesheet" href="components/febworms/edit/palette/palette.css">
+    <link rel="stylesheet" href="components/febworms/edit/canvas/field/properties/properties.css">
+    <link rel="stylesheet" href="components/febworms/edit/canvas/field/properties/validation/validation.css">
+    <!-- endinject -->
+
+</head>
+    <body>
+    +
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div data-navbar></div>
+                    <!--<div data-notifications></div>-->
+                </div>
+            </div>
+            <div class="row">
+                <div ui-view></div>
+            </div>
+        </div>
+
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+        <script src="bower_components/json3/lib/json3.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <!-- endinject -->
+
+        <!-- inject:js -->
+        <script src="components/febworms/febworms.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/validation/validation-message-directive.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/validation/validation-directive.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/validation/parse-pattern-directive.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/property-field/property-field-directive.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/property-field/field-value-directive.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/property-field/common-directive.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/options/options-directive.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/options/options-controller.js"></script>
+        <script src="components/febworms/edit/canvas/field/properties/properties-directive.js"></script>
+        <script src="components/febworms/edit/palette/categories/categories-directive.js"></script>
+        <script src="components/febworms/edit/palette/categories/categories-controller.js"></script>
+        <script src="components/febworms/edit/canvas/field/field-directive.js"></script>
+        <script src="components/febworms/form/schema/schema-directive.js"></script>
+        <script src="components/febworms/form/schema/schema-controller.js"></script>
+        <script src="components/febworms/form/form-fields/form-fields-directive.js"></script>
+        <script src="components/febworms/form/field/field-input-directive.js"></script>
+        <script src="components/febworms/form/field/field-focus-directive.js"></script>
+        <script src="components/febworms/form/field/field-directive.js"></script>
+        <script src="components/febworms/form/field/field-controller.js"></script>
+        <script src="components/febworms/edit/palette/palette-directive.js"></script>
+        <script src="components/febworms/edit/palette/palette-controller.js"></script>
+        <script src="components/febworms/edit/meta/meta-directive.js"></script>
+        <script src="components/febworms/edit/form-actions/form-actions-directive.js"></script>
+        <script src="components/febworms/edit/canvas/canvas-directive.js"></script>
+        <script src="components/febworms/edit/canvas/canvas-controller.js"></script>
+        <script src="components/febworms/common/tabs/tabs-pane-directive.js"></script>
+        <script src="components/febworms/common/tabs/tabs-pane-controller.js"></script>
+        <script src="components/febworms/common/tabs/tabs-directive.js"></script>
+        <script src="components/febworms/common/tabs/tabs-controller.js"></script>
+        <script src="components/febworms/common/jsonify/jsonify.js"></script>
+        <script src="components/febworms/validation/unique-field-name.js"></script>
+        <script src="components/febworms/validation/summary-directive.js"></script>
+        <script src="components/febworms/form/form-directive.js"></script>
+        <script src="components/febworms/form/form-controller.js"></script>
+        <script src="components/febworms/edit/edit-directive.js"></script>
+        <script src="components/febworms/edit/edit-controller.js"></script>
+        <script src="components/febworms/drag/angular-drag-queen.js"></script>
+        <script src="components/febworms/drag/dq-draggable.js"></script>
+        <script src="components/febworms/drag/dq-drag-track.js"></script>
+        <script src="components/febworms/drag/dq-drag-area.js"></script>
+        <script src="components/febworms/common/febworms-utils.js"></script>
+        <script src="components/febworms/common/febworms-placeholder-directive.js"></script>
+        <script src="components/febworms/common/febworms-number-input-directive.js"></script>
+        <script src="components/febworms/common/febworms-dropdown-input-directive.js"></script>
+        <script src="components/febworms/common/bind-expression.js"></script>
+        <script src="app.js"></script>
+        <script src="components/notifications/notifications.js"></script>
+        <script src="components/navbar/navbar-directive.js"></script>
+        <script src="components/navbar/navbar-controller.js"></script>
+        <script src="components/common/directives.js"></script>
+        <script src="form/edit.js"></script>
+        <!-- endinject -->
+
+    </body>
+</html>

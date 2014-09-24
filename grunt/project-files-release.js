@@ -3,16 +3,16 @@ var files = {
   febworms: {
     js: 'components/febworms/febworms.min.js',
     jsSrc: [
-      'app/febworms/febworms.js',
-      'app/febworms/**/*.js',
-      '!app/febworms/**/*.test.js'
+      'app2/febworms/febworms.js',
+      'app2/febworms/**/*.js',
+      '!app2/febworms/**/*.test.js'
     ],
     css: 'components/febworms/febworms.min.css',
     cssSrc: [
-      'app/febworms/febworms.css',
+      'app2/febworms/febworms.css',
       'components/febworms/edit/edit.css',
       'components/febworms/edit/canvas/canvas.css',
-      'app/febworms/**/*.css'
+      'app2/febworms/**/*.css'
     ],
     test: [
       'components/febworms/**/*.test.js'
@@ -55,26 +55,26 @@ var files = {
   },
 
   app: {
-    js: 'app/app.min.js',
+    js: 'app2/app2.min.js',
     jsSrc: [
-      'app/app/app.js',
-      'app/app/**/*.js',
-      '!app/app/**/*.test.js'
+      'app2/app2/app2.js',
+      'app2/app2/**/*.js',
+      '!app2/app2/**/*.test.js'
     ],
-    css: 'app/app.min.css',
+    css: 'app2/app2.min.css',
     cssSrc: [
-      'app/app/app.css',
-      'app/app/**/*.css'
+      'app2/app2/app2.css',
+      'app2/app2/**/*.css'
     ],
     test: [
-      'app/**/*.test.js'
+      'app2/**/*.test.js'
     ],
     other: [
-      'app/**/*.png',
-      'app/**/*.jpg'
+      'app2/**/*.png',
+      'app2/**/*.jpg'
     ],
     html2js: [
-      'app/templates-app.js'
+      'app2/templates-app2.js'
     ]
   }
 };

@@ -74,7 +74,7 @@ module.exports = function(grunt, projectFiles) {
       render: ['dist/index.html', 'karma/karma.conf.js'],
       febworms: ['dist/febworms'],
       tmp: ['tmp'],
-      app: ['dist/app'],
+      app: ['dist/app2'],
       vendor: ['dist/vendor'],
       postBuild: {
         src: ['dist/**/*'],
@@ -93,7 +93,7 @@ module.exports = function(grunt, projectFiles) {
           }
         },
         files: {
-          'dist/index.html': ['app/index.html']
+          'dist/index.html': ['app2/index.html']
         }
       },
       karmaConf: {

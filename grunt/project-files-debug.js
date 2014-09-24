@@ -54,23 +54,23 @@ var files = {
 
   app: {
     js: [
-      'app/app.js',
-      'app/**/*.js',
-      '!app/**/*.test.js'
+      'app2/app2.js',
+      'app2/**/*.js',
+      '!app2/**/*.test.js'
     ],
     css: [
-      'app/app.css',
-      'app/**/*.css'
+      'app2/app2.css',
+      'app2/**/*.css'
     ],
     test: [
-      'app/**/*.test.js'
+      'app2/**/*.test.js'
     ],
     other: [
-      'app/**/*.png',
-      'app/**/*.jpg'
+      'app2/**/*.png',
+      'app2/**/*.jpg'
     ],
     html2js: [
-      'app/templates-app.js'
+      'app2/templates-app2.js'
     ]
   }
 };

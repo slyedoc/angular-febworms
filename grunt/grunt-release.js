@@ -13,18 +13,18 @@ module.exports = function (grunt, commonConfig) {
   var gruntConfig = {
     html2js: {
       app: {
-        src: ['app/app/**/*.tmpl.html'],
-        dest: 'tmp/app/templates-app.js'
+        src: ['app2/app2/**/*.tmpl.html'],
+        dest: 'tmp/app2/templates-app2.js'
       },
       febworms: {
-        src: ['app/febworms/**/*.tmpl.html'],
+        src: ['app2/febworms/**/*.tmpl.html'],
         dest: 'tmp/febworms/templates-febworms.js'
       }
     },
     ngmin: {
       app: {
        src: [ '<%= files.app.jsSrc %>' ],
-       dest: 'tmp/app/app.ngmin.js'
+       dest: 'tmp/app2/app2.ngmin.js'
       },
       febworms: {
         src: [ '<%= files.febworms.jsSrc %>' ],
